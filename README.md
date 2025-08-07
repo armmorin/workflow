@@ -1,6 +1,6 @@
-# High-throughput Screening for Low-Temperature Oxide-Ion Conductors
+# Autonomous Computational Screening of Hexagonal Perovskites for Enhanced Oxygen-Ion Conductivity
 
-*Predicting oxygen-ion conductivities at different degrees of strain for a crystalline solid through autonomous workflows and Density Functional Theory (DFT).*
+*A high-throughput DFT screening to identify novel oxygen-ion conductors and unravel their atomic-scale migration mechanisms.*
 
 ---
 
@@ -8,79 +8,91 @@
 
 ### Real-World Problem
 
-The challenge is to discover and optimize materials that demonstrate **high oxygen-ion conductivity at moderate to lower temperatures** (approximately 400–600 °C) to boost energy efficiency and device longevity. **Ba7Nb4MoO20** and similar hexagonal perovskite-derived materials are promising options owing to their **layered structures**. These structures include palmierite-like and perovskite blocks with inherent oxygen vacancies, which facilitate ion transport.
+The development of **sustainable energy technologies** like solid oxide fuel cells (SOFCs) and electrolysis cells (SOECs) **faces a major materials challenge**. These devices need solid electrolytes that can effectively transport oxygen ions, but existing materials such as yttria-stabilized zirconia (YSZ) only show high conductivity at temperatures above 800°C. Running at these high temperatures causes material degradation, compatibility issues with other components, and lowers overall energy efficiency. The main issue is the **absence of materials that provide high oxygen-ion conductivity at lower, more practical temperatures around 400–600°C**.
 
 ### Research Motivation
 
-The research aims to **understand and improve oxygen-ion migration mechanisms in these complex materials**. It focuses on how **in-plane strain**, relevant to epitaxial thin-film growth, **impacts ion migration barriers and ionic conductivity**, an aspect that can be strategically managed by choosing different substrates during thin-film fabrication.
-
-Hexagonal perovskites (HPs), such as **Ba7Nb4MoO20, exhibit anisotropic ionic conductivity**. The effects of strain on their crystal structure and oxygen-ion mobility remain underexplored. This study systematically investigates how uniaxial and biaxial strains, both compressive and tensile, influence oxygen migration energy barriers, vacancy formation energies, and local structural distortions, aiming to demonstrate strain engineering as a method for optimizing material performance.
+This project was driven by the need to **speed up the discovery of new low-temperature oxygen-ion conducting (OIC) materials**. Recent research has highlighted hexagonal perovskite (HP) structures, such as Ba₇Nb₄MoO₂₀, as promising options due to their inherent oxygen vacancies and adaptable crystal structures. However, a thorough exploration of the extensive chemical space within this structural family was lacking. The main goal was to use autonomous, high-throughput computational workflows to efficiently screen thousands of HP compositions, find new candidates, and **understand the atomic-scale mechanisms that control ion migration**.
 
 ### Significance of the Work
 
-This study shows that in Ba7Nb4MoO20, unlike many other oxygen-ion conductors, **applying compressive in-plane strain *reduces* the migration energy barrier for oxygen ions by as much as 0.14 eV** (~15% decrease), leading to improved ionic conductivity. It identifies specific structural distortions and changes in the coordination environment at the transition states of migrating ions that depend on the strain direction, providing atomic-level insights into the ion migration pathways.
+This work significantly advances the field of energy materials by systematically screening 5,400 hexagonal perovskite compositions through an entirely autonomous DFT-based workflow. It successfully identified **29 unique and promising candidate materials** for low-temperature oxygen-ion conduction, many of which have not yet been synthesized experimentally.
 
-Additionally, the research offers practical advice for the epitaxial growth of HP thin films, indicating that **choosing substrates with certain lattice mismatches (especially inducing compressive strain) can enhance oxygen-ion conductivity**. This strain engineering approach could help design more efficient solid electrolytes for intermediate-temperature fuel cells and sensors.
-
-By emphasizing nanoscale structural control through strain, **the study shifts the focus from solely chemical doping to include mechanical modulation of ion transport**, opening new possibilities for energy devices with better efficiency, stability, and scalability. It combines advanced Density Functional Theory calculations, Nudged Elastic Band techniques, and Continuous Symmetry Measure analyses to develop a comprehensive understanding of the mechano-chemical coupling that governs ionic conductivity in these materials.
-
-In summary, this work addresses the critical energy materials challenge of low-temperature oxide ion conduction by demonstrating strain engineering as an effective method to improve oxygen transport in layered hexagonal perovskite oxides, with important implications for the advancement of next-generation solid-state energy conversion and storage technologies.
+In addition to discovering new materials, the study offers valuable insights into the physics of ion transport. It clearly categorizes oxygen-ion migration into two separate pathways: a straightforward **ion-hopping** mechanism and a more intricate **cooperative migration** mechanism. Importantly, the research shows that the cooperative mechanism, characterized by the collective rotation of flexible polyhedral units, consistently results in lower energy barriers and improved ion mobility. These insights provide a rational framework for guiding future experimental efforts, emphasizing the design of materials that promote these low-energy cooperative pathways.
 
 ## 🔎 Key Insights
 
-- **Compressive in-plane strain consistently lowers the oxygen-ion migration energy barrier** by up to 0.14 eV, resulting in nearly a **15% improvement in ionic conductivity**.
+- The high-throughput screening effectively reduced a chemical space of 5,400 structures to **29 novel and promising candidate compositions** for low-temperature oxygen-ion conduction.
 
-    - This behavior is distinct from many other oxide ion conductors where *tensile strain often enhances conductivity*, highlighting material-specific strain effects.
+- Oxygen-ion migration mainly occurs via two mechanisms: a straightforward **ion-hopping** process and a **cooperative mechanism** involving the collective rotation of tetrahedral units.
 
-- The study reveals that **strain induces particular structural distortions and rearrangements in the local coordination environment around migrating oxygen ions**, which facilitate easier ion migration.
+  - The **cooperative migration** is consistently linked to lower activation barriers because rotating flexible polyhedral units helps minimize high-energy lattice strain during ion transport.
 
-    - Continuous Symmetry Measure (CSM) analysis identifies specific polyhedral distortion patterns correlated with reduced migration barriers, providing atomic-scale mechanistic insights.
+- Analysis using Continuous Symmetry Measures (CSM), the study found a direct link between local coordination, polyhedral distortion, and the migration mechanism, providing a quantitative measure of ionic mobility.
 
-- The findings suggest that **epitaxial thin-film growth under carefully selected substrate-induced strain can be an effective strategy** to tailor and enhance oxygen-ion conductivity in hexagonal perovskite materials.
-
-- This strain engineering approach offers a **promising avenue beyond chemical doping by mechanically tuning ionic transport properties**, potentially enabling more efficient and stable solid oxide fuel cells and related devices.
-
+- Key chemical trends that promote the rotational dynamics necessary for the low-energy cooperative mechanism were detected in this study.
 
 ## 📝 Methodology
 
-This project employed *state-of-the-art* workflow management tools to investigate oxygen-ion migration in Ba7Nb4MoO20 hexagonal perovskites under strain from first-principles. The methodology can be summarized as follows:
+This project was executed using a multi-stage, autonomous computational workflow designed to efficiently screen a large materials database for promising oxygen-ion conductors.
 
 - **Dataset and Systems:**  
   
-  Atomic-scale models of Ba7Nb4MoO20 were constructed based on experimentally known crystal structures. The structural information was stored and managed in a SQLite3 database, which was accessed and manipulated using the Atomic Simulation Environment (ASE) toolkit. 
+  The study began with a chemical space of 5,400 unique compositions based on the A₇B₄B'O₂₀ hexagonal perovskite prototype. All structural data, calculations, and results were stored and managed in a **SQLite3 database**, accessed and manipulated using the **Atomic Simulation Environment (ASE)**
   
-  Various strain states were simulated by applying uniaxial (along a or b axes) and biaxial (a and b axes together) in-plane strains, representing both compressive and tensile regimes within ranges relevant to epitaxial thin-film growth (strain levels up to approximately ±3%).
-
 - **Workflow Management**  
 
-  The different stages of the computational workflow, including *structure relaxation*, *vacancy formation energy calculations*, and *Nudged Elastic Band* (NEB) migration barrier calculations, were efficiently orchestrated and managed using PerQueue. This enabled automation, dynamic control, and high-throughput execution of the computational tasks across HPC resources.
+  The entire high-throughput screening process—from structure generation to final analysis—was orchestrated using **PerQueue**, a dynamic Python-based workflow manager. PerQueue enabled the automation of thousands of parallel calculations on high-performance computing (HPC) clusters, managing dependencies, and dynamically filtering candidates based on calculated properties.
 
 - **Calculation Process:**  
 
-  - Oxygen vacancy formation energies were computed to assess the thermodynamic feasibility of vacancy creation under strain. 
-  - Oxygen-ion migration barriers along key diffusion pathways were calculated using the Nudged Elastic Band (NEB) method to determine energy barriers for ion hopping between lattice sites.
+  First-principles calculations were performed using **Density Functional Theory (DFT)** as implemented in the VASP code. The workflow consisted of several filtering steps:
+  
+    1.  **Initial Screening:** Structures were filtered based on chemical and geometric rules (e.g., charge neutrality, ionic radii).
+    2.  **Stability Analysis:** Thermodynamic stability was assessed by calculating the energy above the convex hull (E_hull < 100 meV/atom).
+    3.  **Electronic Properties**: A bandgap filter (> 1.0 eV) was applied to select for electronically insulating materials.
+    4.  **Kinetic Analysis:** For the remaining candidates, the **Nudged Elastic Band (NEB)** method was used to calculate the oxygen-ion migration energy barrier (E_A < 1.1 eV)
 
-- **Analytical Tools:**  
+-  **Analytical Tools**
 
-  Continuous Symmetry Measure (CSM) analysis quantified distortions in local polyhedral coordination environments around migrating ions, enabling correlation between structural changes and migration barrier variations.
-
+  Continuous Symmetry Measure (CSM) analysis was employed to quantify the distortion of the coordination polyhedra around the migrating ion at each step of the NEB path. This allowed for the classification of migration mechanisms and provided a direct link between atomic structure and ionic mobility.
 
 ## 📊 Visualizations
 
-![IN PROGRESS!](link_to_key_plot.png)
+**Workflow Funnel**
+![A diagram illustrating the multi-step screening process, showing the number of candidate materials that pass or fail at each stage of the computational workflow (e.g., Stability Check, Bandgap, NEB).](https://github.com/armmorin/workflow/blob/main/Sankey_wf.pdf)
+
+**Migration Mechanism Schematics**
+![Side-by-side atomic visualizations of the "ion-hopping" and "cooperative" migration pathways. These diagrams would show the evolution of the local polyhedra and the trajectory of the migrating oxygen ion, clearly distinguishing the rotational motion in the cooperative mechanism from the simple hop.](https://github.com/armmorin/workflow/blob/main/ces_ion_hop_coop.pdf)
 
 ## 🤔 Interpretation
 
+This screening project's results strongly indicate that tailoring the local geometry and dynamic flexibility of the crystal lattice is more effective for improving ionic conductivity than merely adjusting composition. The main insight is that materials supporting cooperative migration—where polyhedral units rotate to facilitate ion movement—perform better. This offers a clear design principle for experimentalists: prioritize compositions with flexible tetrahedral units and ample free volume to enable these low-energy rotational modes.
+
+Additionally, this research confirms the value of autonomous high-throughput workflows as essential tools in modern materials discovery. By automating complex, repetitive computational screening tasks, we can navigate extensive chemical spaces and identify fundamental structure-property relationships that would be difficult to uncover with traditional experimental or computational approaches.
 
 ## 🗂️ Reproducibility
 
-[How could someone else check your results?  
-Is your notebook/code available? Is the data public?]: #
+- **Code Availability**: The core of the project is built on open-source tools. The workflow automation was managed by PerQueue, and all structure/data handling was done with the Atomic Simulation Environment (ASE). The specific scripts for generating, filtering, and analyzing the data in this project can be made available in a repository.
 
-**IN PROGRESS**
+- **Data Accessibility**: The full dataset, including the initial structures, DFT calculation results, and the final 29 candidate materials, will be publicly available for verification and further analysis. A dedicated DOI for the dataset can be provided.
 
-## 🙏 Acknowledgments / References
+- **Environment and Dependencies**: The project was run in a Linux-based HPC environment. Key software dependencies include:
 
--  For more information on this work, you can refer to the preprint version at [Understanding Oxygen-Ion Migration in Hexagonal Perovskites Through Autonomous Workflows and Density Functional Theory](10.26434/chemrxiv-2025-kdhkh)
+  -   Python (>3.10)
+  -   PerQueue (v0.3.0a0)
+  -   ASE (v3.22.1)
+  -   Pymatgen
+  -   VASP (v6.4.2) for DFT calculations
 
-[-  The database and structures are also publicly available at [Dataset for "Mechanistic Insights into Oxygen-Ion Migration in Hexagonal Perovskites via Autonomous First-Principles Workflows"](10.11583/DTU.29580659)]: #
+- **Instructions to Reproduce Key Results**: The workflow can be reproduced by installing the required dependencies, configuring the `project_config.cfg` file with the appropriate calculation parameters, and launching the main workflow script via PerQueue. Subsequent analysis scripts can then be run on the output database to regenerate the figures and key findings.
+
+- **Expected Outcomes**: A successful run of the workflow will produce a populated SQLite3 database containing the calculated properties for all structures and a final filtered list of the 29 candidate materials with low migration barriers.
+
+## 🙏 References / Data Availability
+
+-  The primary findings of this work are detailed in the scientific article: [Understanding Oxygen-Ion Migration in Hexagonal Perovskites Through Autonomous Workflows and Density Functional Theory.](https://doi.org/10.26434/chemrxiv-2025-kdhkh)
+
+The workflow manager used is described in: [PerQueue: Dynamic Workflow Manager for Materials Discovery.](https://doi.org/10.1039/D4DD00134F)
+
+The complete dataset, including structures and calculation outputs, will soon be available.
