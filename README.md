@@ -93,6 +93,6 @@ Additionally, this research confirms the value of autonomous high-throughput wor
 
 -  The primary findings of this work are detailed in the scientific article: [Understanding Oxygen-Ion Migration in Hexagonal Perovskites Through Autonomous Workflows and Density Functional Theory.](https://doi.org/10.26434/chemrxiv-2025-kdhkh)
 
-The workflow manager used is described in: [PerQueue: Dynamic Workflow Manager for Materials Discovery.](https://doi.org/10.1039/D4DD00134F)
+-  The workflow manager used is described in: [PerQueue: Dynamic Workflow Manager for Materials Discovery.](https://doi.org/10.1039/D4DD00134F)
 
-The complete dataset, including structures and calculation outputs, will soon be available.
+-  The complete dataset, including structures and calculation outputs, will soon be available.

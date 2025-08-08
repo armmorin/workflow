@@ -54,7 +54,6 @@
 /screening_hps_files.zip
 /simple_neb.py
 /site_ineq_analysis
-/structures
 /submit.sh
 /update_db_entries.py
 /wf_driver.py
@@ -80,3 +79,10 @@ codes/cleanup.py
 codes/calc_refs.py
 codes/test
 codes/__pycache__
+structures/old_dbs
+structures/backups
+structures/molecules.db
+structures/references.db
+structures/*hexag*_perovs*
+structures/backup
+structures/hps_screening.db
